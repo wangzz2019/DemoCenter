@@ -5,7 +5,8 @@ var path=require('path');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('pizza42', { title: 'Pizza 42' });
+  //res.render('pizza42', { title: 'Pizza 42' });
+  res.render('index',{title:'Home Page'});
 });
 
 router.get('/pizzaorder',function(req,res,next){
