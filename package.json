@@ -9,6 +9,7 @@
     "@alicloud/imagesearch-2018-01-20": "^1.0.0",
     "auth0-lock": "^11.14.1",
     "cookie-parser": "~1.4.3",
+    "dateformat": "^3.0.3",
     "dd-trace": "^0.15.5",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",

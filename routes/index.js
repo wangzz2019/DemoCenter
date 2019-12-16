@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var fs=require('fs');
 var path=require('path');
+var df = require('dateformat');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -16,7 +17,9 @@ router.get('/pizzaorder',function(req,res,next){
 router.post('/test',function(req,res,next){
   msg="Hi, this is a return page of POST test";
   eventtitle=req.body.event_title;
-  console.log(eventtitle);
+  var d=new Date();
+  var dt=d.toLocaleString();
+  console.log(dt + "  event_title is " + eventtitle);
   res.send(msg + " and the event title is " + eventtitle);
 });
 
