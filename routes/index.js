@@ -15,7 +15,8 @@ router.get('/pizzaorder',function(req,res,next){
 
 router.post('/test',function(req,res,next){
   msg="Hi, this is a return page of POST test";
-  res.send(msg);
+  eventtitle=req.body.event_title;
+  res.send(msg + " and the event title is " + eventtitle);
 });
 
 router.get('/showip',function(req,res,next) {
