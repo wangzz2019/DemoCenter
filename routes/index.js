@@ -13,6 +13,11 @@ router.get('/pizzaorder',function(req,res,next){
   res.render('pizzaorder',{});
 });
 
+router.post('/test',function(req,res,next){
+  msg="Hi, this is a return page of POST test";
+  res.send(msg);
+});
+
 router.get('/showip',function(req,res,next) {
   var serverIP=getIPAdress();
   //var clientIP=req.ip
