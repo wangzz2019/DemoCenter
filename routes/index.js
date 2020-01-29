@@ -3,6 +3,7 @@ var router = express.Router();
 var fs=require('fs');
 var path=require('path');
 var df = require('dateformat');
+const {exec}=require('child_process');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -12,6 +13,19 @@ router.get('/', function(req, res, next) {
 
 router.get('/pizzaorder',function(req,res,next){
   res.render('pizzaorder',{});
+});
+
+router.post('/reboot',function(req,res,next){
+  //run a local shell command for test
+  command="ls -al";
+  exec(command,(err,stdout,stderr)=>{
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(`stdout: ${stdout}`);
+    console.log(`stderr: ${stderr}`);
+  })
 });
 
 router.post('/test',function(req,res,next){
