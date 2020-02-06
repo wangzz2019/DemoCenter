@@ -45,6 +45,11 @@ router.get('/showip',function(req,res,next) {
   res.send(msg);
 });
 
+router.get('/epoc',function(req,res,next){
+  retVal=epoctotime(1234);
+  res.send(retVal);
+})
+
 router.post('/epoc',function(req,res,next){
   /*{
     "body": "$EVENT_MSG",
@@ -62,7 +67,7 @@ router.post('/epoc',function(req,res,next){
   last_updated=req.body.last_updated;
   epoc="last_updated in EPOC is " + last_updated;
   console.log(epoc);
-  readableTime="last_update in YYYYDDMMHHSSmm is ";
+  readableTime="last_update in YYYYDDMMHHSSmm is " + epoctotime(last_updated);
   console.log(readableTime);
   res.send(epoc + '<br>' + readableTime);
 });
@@ -135,6 +140,13 @@ router.get('/imagesearch/addpic', function (req, res, next) {
     console.log("Error Message: ", err);
   });
 });
+
+function epoctotime(epoctime){
+  var epoct=1580982567000;
+  var UTCDate=df(new Date(epoct),'yyyymmddHH:MM:ss');
+  //var day=df()
+  return UTCDate;
+}
 
 function getIPAdress() {
   var interfaces = require('os').networkInterfaces();　　
