@@ -46,7 +46,7 @@ router.get('/showip',function(req,res,next) {
 });
 
 function epoctotime(epoctime){
-  var epoct=1580982567000;
+  var epoct=epoctime;
   var UTCDate=df(new Date(epoct),'yyyymmddHH:MM:ss',false);
   //var day=df()
   return UTCDate;
