@@ -46,7 +46,22 @@ router.get('/showip',function(req,res,next) {
 });
 
 router.post('/epoc',function(req,res,next){
-  msg="test message";
+  /*{
+    "body": "$EVENT_MSG",
+    "last_updated": "$LAST_UPDATED",
+    "event_type": "$EVENT_TYPE",
+    "title": "$EVENT_TITLE",
+    "date": "$DATE",
+    "org": {
+        "id": "$ORG_ID",
+        "name": "$ORG_NAME"
+    },
+    "id": "$ID"
+}*/
+
+  last_updated=req.body.last_updated;
+  msg="last_updated is " + last_updated;
+  console.log(msg);
   res.send(msg);
 });
 
