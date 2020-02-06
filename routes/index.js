@@ -43,10 +43,9 @@ router.get('/showip',function(req,res,next) {
   msg="Server IP is: " + serverIP;
   msg+="<br />Client IP is: " + req.ip.match(/\d+\.\d+\.\d+\.\d+/);
   res.send(msg);
-  
 });
 
-router.get('/epoc',function(req,res,next){
+router.post('/epoc',function(req,res,next){
   msg="test message";
   res.send(msg);
 });
