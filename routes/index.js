@@ -46,8 +46,8 @@ router.get('/showip',function(req,res,next) {
 });
 
 function epoctotime(epoctime){
-  var epoct=epoctime;
-  var UTCDate=df(new Date(epoctime),'yyyymmddHH:MM:ss',false);
+  var epoct=parseFloat(epoctime);
+  var UTCDate=df(new Date(epoct),'yyyymmddHH:MM:ss',false);
   //var day=df()
   return UTCDate;
 }
