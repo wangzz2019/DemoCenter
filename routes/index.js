@@ -47,13 +47,13 @@ router.get('/showip',function(req,res,next) {
 
 function epoctotime(epoctime){
   var epoct=epoctime;
-  var UTCDate=df(new Date(epoct),'yyyymmddHH:MM:ss',false);
+  var UTCDate=df(new Date(epoctime),'yyyymmddHH:MM:ss',false);
   //var day=df()
   return UTCDate;
 }
 
 router.get('/epoc',function(req,res,next){
-  retVal=epoctotime(1234);
+  retVal=epoctotime(1580986533000);
   //res.send(retVal.toLocaleTimeString('en-US', {timeZone: 'Asia/Tokyo'}));
   res.send(retVal);
 });
