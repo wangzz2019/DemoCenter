@@ -60,7 +60,8 @@ router.post('/epoc',function(req,res,next){
 }*/
 
   last_updated=req.body.last_updated;
-  msg="last_updated is " + last_updated;
+  msg="last_updated in EPOC is " + last_updated + "¥n";
+  msg+="last_update in YYYYDDMMHHSSmm is ";
   console.log(msg);
   res.send(msg);
 });
