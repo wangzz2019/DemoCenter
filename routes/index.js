@@ -45,10 +45,18 @@ router.get('/showip',function(req,res,next) {
   res.send(msg);
 });
 
+function epoctotime(epoctime){
+  var epoct=1580982567000;
+  var UTCDate=df(new Date(epoct),'yyyymmddHH:MM:ss',false);
+  //var day=df()
+  return UTCDate;
+}
+
 router.get('/epoc',function(req,res,next){
   retVal=epoctotime(1234);
+  //res.send(retVal.toLocaleTimeString('en-US', {timeZone: 'Asia/Tokyo'}));
   res.send(retVal);
-})
+});
 
 router.post('/epoc',function(req,res,next){
   /*{
@@ -140,13 +148,6 @@ router.get('/imagesearch/addpic', function (req, res, next) {
     console.log("Error Message: ", err);
   });
 });
-
-function epoctotime(epoctime){
-  var epoct=1580982567000;
-  var UTCDate=df(new Date(epoct),'yyyymmddHH:MM:ss');
-  //var day=df()
-  return UTCDate;
-}
 
 function getIPAdress() {
   var interfaces = require('os').networkInterfaces();　　
