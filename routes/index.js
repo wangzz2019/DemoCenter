@@ -46,6 +46,11 @@ router.get('/showip',function(req,res,next) {
   
 });
 
+router.get('/epoc',function(req,res,next){
+  msg="test message";
+  res.send(msg);
+});
+
 router.get('/test',function(req, res, next){
     res.setHeader('Last-Modified', (new Date()).toUTCString());
     //var args=URL.parse(req.url,true).query;
