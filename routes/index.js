@@ -40,6 +40,7 @@ router.post('/test',function(req,res,next){
 router.post('/bodytest',function(req,res,next){
   checkvar=req.body.date;
   //msg="hi, this is page for testing request body";
+  console.log(checkvar);
   res.send("date is " + checkvar);
 });
 
