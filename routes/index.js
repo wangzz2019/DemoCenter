@@ -37,6 +37,12 @@ router.post('/test',function(req,res,next){
   res.send(msg + " and the event title is " + eventtitle);
 });
 
+router.post('/bodytest',function(req,res,next){
+  checkvar=req.body.date;
+  //msg="hi, this is page for testing request body";
+  res.send("date is " + checkvar);
+});
+
 router.get('/showip',function(req,res,next) {
   var serverIP=getIPAdress();
   //var clientIP=req.ip
