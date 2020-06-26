@@ -38,10 +38,12 @@ router.post('/test',function(req,res,next){
 });
 
 router.post('/bodytest',function(req,res,next){
-  checkvar=req.body.date;
+  var1=req.body.customerOccurDate;
+  var2=req.body.customerOccurTime;
   //msg="hi, this is page for testing request body";
-  console.log(checkvar);
-  res.send("date is " + checkvar);
+  console.log(var1);
+  console.log(var2)
+  res.send("date is " + var1 + " and hms is " + var2);
 });
 
 router.get('/showip',function(req,res,next) {
