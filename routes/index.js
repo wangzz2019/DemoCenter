@@ -42,8 +42,9 @@ router.post('/bodytest',function(req,res,next){
   var2=req.body.customerOccurTime;
   //msg="hi, this is page for testing request body";
   console.log(var1);
-  console.log(var2)
-  res.send("date is " + var1 + " and hms is " + var2);
+  console.log(var2);
+  response={"result":"0000"};
+  res.send(JSON.stringify(response));
 });
 
 router.get('/showip',function(req,res,next) {
