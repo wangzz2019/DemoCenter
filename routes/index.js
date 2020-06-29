@@ -40,9 +40,11 @@ router.post('/test',function(req,res,next){
 router.post('/bodytest',function(req,res,next){
   var1=req.body.customerOccurDate;
   var2=req.body.customerOccurTime;
+  var3=req.body.orderNumber;
   //msg="hi, this is page for testing request body";
   console.log(var1);
   console.log(var2);
+  console.log(var3);
   response={"result":"0010","result1":"0000"};
   res.send(JSON.stringify(response));
 });
