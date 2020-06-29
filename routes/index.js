@@ -43,7 +43,7 @@ router.post('/bodytest',function(req,res,next){
   //msg="hi, this is page for testing request body";
   console.log(var1);
   console.log(var2);
-  response={"result":"0000"};
+  response={"result":"0000","result1":"0000"};
   res.send(JSON.stringify(response));
 });
 
