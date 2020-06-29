@@ -40,7 +40,7 @@ router.post('/test',function(req,res,next){
 router.post('/bodytest',function(req,res,next){
   var1=req.body.customerOccurDate;
   var2=req.body.customerOccurTime;
-  var3=req.body.orderNumber;
+  var3=req.body.orderInfos[0].orderNumber;
   //msg="hi, this is page for testing request body";
   console.log(var1);
   console.log(var2);
