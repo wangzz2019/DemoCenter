@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 //const tracer = require('dd-trace').init({debug:true});
-const tracer = require('dd-trace').init();
+const tracer = require('dd-trace').init({analytics: true});
 var app = require('../app');
 var debug = require('debug')('democenter:server');
 var http = require('http');
