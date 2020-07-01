@@ -67,8 +67,9 @@ router.get('/spantag',function(req,res,next){
     
     
     msg="This is a page for span tag test, please check the tag info on Datadog"
-    res.send(msg);
     span.finish();
+    res.send(msg);
+    
   //});
 });
 
