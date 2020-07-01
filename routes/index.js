@@ -57,6 +57,21 @@ router.get('/showip',function(req,res,next) {
   res.send(msg);
 });
 
+router.get('/spantag',function(req,res,next){
+  scope.activate(() => {
+    const tracer = require('dd-trace').init();
+    const span = tracer.startSpan('web.request');
+    
+    span.setTag('http.url', '/spantag');
+    span.setTag('ip','192.168.1.1');
+    
+    
+  msg="This is a page for span tag test, please check the tag info on Datadog"
+  res.send(msg);
+  span.finish();
+  });
+});
+
 function epoctotime(epoctime){
   var epoct=parseFloat(epoctime);
   var UTCDate=df(new Date(epoct),'yyyymmddHH:MM:ss',false);
@@ -97,7 +112,7 @@ router.get('/test',function(req, res, next){
     //var args=URL.parse(req.url,true).query;
     response={"id":1,"name":"wangzz"}
     res.send(JSON.stringify(response));
-});
+});                                       
 
 router.get('/imagesearch/addpic', function (req, res, next) {
   var Client = require("@alicloud/imagesearch-2018-01-20");
