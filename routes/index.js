@@ -59,7 +59,7 @@ router.get('/showip',function(req,res,next) {
 
 router.get('/spantag',function(req,res,next){
   //scope.activate(() => {
-    //const tracer = require('dd-trace').init();
+    const tracer = require('dd-trace').init();
     const span = tracer.startSpan('web.request');
     
     span.setTag('http.url', '/spantag');
