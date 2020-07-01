@@ -58,18 +58,18 @@ router.get('/showip',function(req,res,next) {
 });
 
 router.get('/spantag',function(req,res,next){
-  scope.activate(() => {
-    const tracer = require('dd-trace').init();
+  //scope.activate(() => {
+    //const tracer = require('dd-trace').init();
     const span = tracer.startSpan('web.request');
     
     span.setTag('http.url', '/spantag');
     span.setTag('ip','192.168.1.1');
     
     
-  msg="This is a page for span tag test, please check the tag info on Datadog"
-  res.send(msg);
-  span.finish();
-  });
+    msg="This is a page for span tag test, please check the tag info on Datadog"
+    res.send(msg);
+    span.finish();
+  //});
 });
 
 function epoctotime(epoctime){
