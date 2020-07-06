@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
 
     var webAuth = new auth0.WebAuth({
         domain: 'wangzz.au.auth0.com',
-        clientID: 'dG11rEPaqPG-gKdaZa6PcsxJrRl_TYMw',
+        clientID: 'xxxxxx',
         responseType: 'token id_token',
         scope: 'openid profile email',
         redirectUri: window.location.href

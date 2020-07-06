@@ -110,6 +110,7 @@ router.post('/epoc',function(req,res,next){
 
 router.get('/test',function(req, res, next){
     res.setHeader('Last-Modified', (new Date()).toUTCString());
+    res.setHeader('content-type',"application/json");
     //var args=URL.parse(req.url,true).query;
     response={"id":1,"name":"wangzz"}
     res.send(JSON.stringify(response));
