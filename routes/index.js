@@ -108,6 +108,12 @@ router.post('/epoc',function(req,res,next){
   res.send(epoc + '<br>' + readableTime);
 });
 
+router.post('/docomotest',function(req,res,next){
+  var testdata=req.body.testdata;
+  res.setHeader('content-type',"application/json");
+  res.send(testdata);
+});
+
 router.get('/test',function(req, res, next){
     res.setHeader('Last-Modified', (new Date()).toUTCString());
     res.setHeader('content-type',"application/json");
