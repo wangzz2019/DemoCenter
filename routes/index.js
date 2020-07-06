@@ -111,7 +111,7 @@ router.post('/epoc',function(req,res,next){
 router.post('/docomotest',function(req,res,next){
   var testdata=req.body.testdata;
   res.setHeader('content-type',"application/json");
-  res.send(testdata);
+  res.send(JSON.stringify(testdata));
 });
 
 router.get('/test',function(req, res, next){
