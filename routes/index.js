@@ -120,7 +120,7 @@ router.post('/docomotest',function(req,res,next){
 });
 
 router.get('/test',function(req, res, next){
-    res.setHeader('Access-Control-Allow-Origin': 'http://127.0.0.1:3000');
+    res.setHeader('Access-Control-Allow-Origin','http://127.0.0.1:3000');
     res.setHeader('Last-Modified', (new Date()).toUTCString());
     res.setHeader('content-type',"application/json");
     
