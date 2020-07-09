@@ -10,6 +10,9 @@ router.get('/', function(req, res, next) {
   //res.render('pizza42', { title: 'Pizza 42' });
   res.render('index',{title:'Home Page'});
 });
+router.get('/promise',function(req,res,next){
+  res.render('promise',{title:"promise test page"});
+});
 
 router.get('/pizzaorder',function(req,res,next){
   res.render('pizzaorder',{});
@@ -117,8 +120,10 @@ router.post('/docomotest',function(req,res,next){
 });
 
 router.get('/test',function(req, res, next){
+    req.setHeader({'Access-Control-Allow-Origin': 'http://127.0.0.1:3000'});
     res.setHeader('Last-Modified', (new Date()).toUTCString());
     res.setHeader('content-type',"application/json");
+    
     //var args=URL.parse(req.url,true).query;
     response={"id":1,"name":"wangzz"}
     res.send(JSON.stringify(response));
