@@ -1,4 +1,5 @@
 function remotecall(){
+    
     var hv=document.getElementById("home-view");
     var p=ajax('GET','http://52.196.214.170:3000/test');
     p.then(function (text){
