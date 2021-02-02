@@ -41,7 +41,7 @@ router.post('/webhook',function(req,res,next){
     command='ssh -i /root/AlibabaTokyo.pem root@192.168.1.134 "reboot"';
     exec(command,(err,stdout,stderr)=>{
     if (err) {
-      console.log(err);
+      //console.log(err);
       return;
     }
     console.log(`stdout: ${stdout}`);
