@@ -34,6 +34,19 @@ router.post('/reboot',function(req,res,next){
 router.post('/webhook',function(req,res,next){
   msg="Hi, this is a return page of POST test";
   eventtitle=req.body.title;
+  title=eventtitle.split(' ').pop();
+  if (title=="host1") {
+    //start host2
+    command='ssh -i /root/AlibabaTokyo.pem root@192.168.1.134 "reboot"';
+    exec(command,(err,stdout,stderr)=>{
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(`stdout: ${stdout}`);
+    console.log(`stderr: ${stderr}`);
+  })
+  }
   eventmsg=req.body.body;
   orgid=req.body.org.id;
   orgname=req.body.org.name;
@@ -137,7 +150,9 @@ router.get('/test',function(req, res, next){
     res.setHeader('Access-Control-Allow-Origin','http://127.0.0.1:3000');
     res.setHeader('Last-Modified', (new Date()).toUTCString());
     res.setHeader('content-type',"application/json");
-    
+    s="Hi are you ok";
+    // sp=s.split(' ');
+    // console.log(s.split(' ').pop());
     //var args=URL.parse(req.url,true).query;
     response={"id":1,"name":"wangzz"}
     res.send(JSON.stringify(response));
