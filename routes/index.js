@@ -41,6 +41,7 @@ router.post('/webhook',function(req,res,next){
   var dt=d.toLocaleString();
   console.log(dt + "  event_title is " + eventtitle);
   returnmsg={"body":eventmsg,"title":eventtitle,"orgid":orgid,"orgname":orgname};
+  console.log(returnmsg);
   res.send(JSON.stringify(returnmsg));
 });
 
