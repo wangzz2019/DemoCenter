@@ -33,11 +33,15 @@ router.post('/reboot',function(req,res,next){
 
 router.post('/webhook',function(req,res,next){
   msg="Hi, this is a return page of POST test";
-  eventtitle=req.body.event_title;
+  eventtitle=req.body.title;
+  eventmsg=req.body.body;
+  orgid=req.body.org.id;
+  orgname=req.body.org.name;
   var d=new Date();
   var dt=d.toLocaleString();
   console.log(dt + "  event_title is " + eventtitle);
-  res.send(msg + " and the event title is " + eventtitle);
+  returnmsg={"body":eventmsg,"title":eventtitle,"orgid":orgid,"orgname":orgname};
+  res.send(JSON.stringify(returnmsg));
 });
 
 router.post('/test',function(req,res,next){
