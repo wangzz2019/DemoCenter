@@ -37,6 +37,7 @@ router.post('/webhook',function(req,res,next){
   title=eventtitle.split(' ').pop();
   if (title=="host1") {
     //start host2
+    console.log("Oh, it is host1, let's reboot jackTest");
     command='ssh -i /root/AlibabaTokyo.pem root@192.168.1.134 "reboot"';
     exec(command,(err,stdout,stderr)=>{
     if (err) {
