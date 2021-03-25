@@ -14,8 +14,8 @@ router.get('/promise',function(req,res,next){
   res.render('promise',{title:"promise test page"});
 });
 router.get('/spa',function(req,res,next){
-  msg="jackmsg";
-  res.send(msg);
+  response={"id":1,"name":"wangzz"}
+  res.send(JSON.stringify(response));
 });
 
 router.get('/pizzaorder',function(req,res,next){
@@ -42,7 +42,7 @@ router.post('/webhook',function(req,res,next){
   if (title=="host1") {
     //start host2
     console.log("Oh, it is host1, let's reboot jackTest");
-    command='ssh -i /root/AlibabaTokyo.pem root@192.168.1.134 "reboot"';
+    // command='ssh -i /root/AlibabaTokyo.pem root@192.168.1.134 "reboot"';
     exec(command,(err,stdout,stderr)=>{
     if (err) {
       //console.log(err);
@@ -55,10 +55,11 @@ router.post('/webhook',function(req,res,next){
   eventmsg=req.body.body;
   orgid=req.body.org.id;
   orgname=req.body.org.name;
+  alert_type=req.body.alert_type;
   var d=new Date();
   var dt=d.toLocaleString();
   //console.log(dt + "  event_title is " + eventtitle);
-  returnmsg={"body":eventmsg,"title":eventtitle,"orgid":orgid,"orgname":orgname};
+  returnmsg={"body":eventmsg,"title":eventtitle,"orgid":orgid,"orgname":orgname,"ALERT_TYPE":alert_type};
   console.log(returnmsg);
   res.send(JSON.stringify(returnmsg));
 });
