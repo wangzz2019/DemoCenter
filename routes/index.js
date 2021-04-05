@@ -68,7 +68,8 @@ router.post('/webhook',function(req,res,next){
   var d=new Date();
   var dt=d.toLocaleString();
   //console.log(dt + "  event_title is " + eventtitle);
-  returnmsg={"body":eventmsg,"title":eventtitle,"orgid":orgid,"orgname":orgname,"ALERT_TYPE":alert_type,"ALERT_STATUS":alert_status,"LOG_SAMPLE":log_sample};
+  // returnmsg={"body":eventmsg,"title":eventtitle,"orgid":orgid,"orgname":orgname,"ALERT_TYPE":alert_type,"ALERT_STATUS":alert_status,"LOG_SAMPLE":log_sample};
+  returnmsg={"body":eventmsg,"orgid":orgid,"orgname":orgname,"ALERT_TYPE":alert_type,"ALERT_STATUS":alert_status,"LOG_SAMPLE":log_sample};
   console.log(returnmsg);
   res.send(JSON.stringify(returnmsg));
 });
