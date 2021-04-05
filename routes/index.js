@@ -58,6 +58,7 @@ router.post('/webhook',function(req,res,next){
   alert_type=req.body.alert_type;
   alert_status=req.body.alert_status;
   log_sample=req.body.log_sample;
+  console.log(log_sample);
   var d=new Date();
   var dt=d.toLocaleString();
   //console.log(dt + "  event_title is " + eventtitle);
