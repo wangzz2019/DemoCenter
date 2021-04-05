@@ -60,7 +60,10 @@ router.post('/webhook',function(req,res,next){
   orgname=req.body.org.name;
   alert_type=req.body.alert_type;
   alert_status=req.body.alert_status;
-  // log_sample=req.body.log_sample;
+  log_sample=req.body.log_sample;
+  if (log_sample==null){
+    log_sample="";
+  }
   // console.log(log_sample);
   var d=new Date();
   var dt=d.toLocaleString();
