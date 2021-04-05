@@ -57,10 +57,11 @@ router.post('/webhook',function(req,res,next){
   orgname=req.body.org.name;
   alert_type=req.body.alert_type;
   alert_status=req.body.alert_status;
+  log_sample=req.body.log_sample;
   var d=new Date();
   var dt=d.toLocaleString();
   //console.log(dt + "  event_title is " + eventtitle);
-  returnmsg={"body":eventmsg,"title":eventtitle,"orgid":orgid,"orgname":orgname,"ALERT_TYPE":alert_type,"ALERT_STATUS":alert_status};
+  returnmsg={"body":eventmsg,"title":eventtitle,"orgid":orgid,"orgname":orgname,"ALERT_TYPE":alert_type,"ALERT_STATUS":alert_status,"LOG_SAMPLE":log_sample};
   console.log(returnmsg);
   res.send(JSON.stringify(returnmsg));
 });
