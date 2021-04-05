@@ -37,7 +37,7 @@ router.post('/reboot',function(req,res,next){
 
 router.post('/webhook',function(req,res,next){
   msg="Hi, this is a return page of POST test";
-  eventtitle=req.body.title;
+  //eventtitle=req.body.title;
   console.log("======starting print whole request body============");
   console.log(req.body);
   console.log("======print end====================================");
