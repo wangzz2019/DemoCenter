@@ -37,10 +37,10 @@ router.post('/reboot',function(req,res,next){
 
 router.post('/webhook',function(req,res,next){
   msg="Hi, this is a return page of POST test";
-  //eventtitle=req.body.title;
-  console.log("======starting print whole request body============");
-  console.log(req.body);
-  console.log("======print end====================================");
+  eventtitle=req.body.title;
+  // console.log("======starting print whole request body============");
+  // console.log(req.body);
+  // console.log("======print end====================================");
   title=eventtitle.split(' ').pop();
   if (title=="host1") {
     //start host2
@@ -61,15 +61,15 @@ router.post('/webhook',function(req,res,next){
   alert_type=req.body.alert_type;
   alert_status=req.body.alert_status;
   log_sample=req.body.log_sample;
-  if (log_sample==null){
+  if (log_sample == null){
     log_sample="";
   }
   // console.log(log_sample);
   var d=new Date();
   var dt=d.toLocaleString();
   //console.log(dt + "  event_title is " + eventtitle);
-  // returnmsg={"body":eventmsg,"title":eventtitle,"orgid":orgid,"orgname":orgname,"ALERT_TYPE":alert_type,"ALERT_STATUS":alert_status,"LOG_SAMPLE":log_sample};
-  returnmsg={"body":eventmsg,"orgid":orgid,"orgname":orgname,"ALERT_TYPE":alert_type,"ALERT_STATUS":alert_status,"LOG_SAMPLE":log_sample};
+  returnmsg={"body":eventmsg,"title":eventtitle,"orgid":orgid,"orgname":orgname,"ALERT_TYPE":alert_type,"ALERT_STATUS":alert_status,"LOG_SAMPLE":log_sample};
+  // returnmsg={"body":eventmsg,"orgid":orgid,"orgname":orgname,"ALERT_TYPE":alert_type,"ALERT_STATUS":alert_status,"LOG_SAMPLE":log_sample};
   console.log(returnmsg);
   res.send(JSON.stringify(returnmsg));
 });
