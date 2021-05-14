@@ -17,6 +17,10 @@ router.get('/spa',function(req,res,next){
   response={"id":1,"name":"wangzz"}
   res.send(JSON.stringify(response));
 });
+router.get('/getjson',function(req,res,next){
+  response={"ResultCode":"0900","ResultMessage":"resultmessages"}
+  res.send(JSON.stringify(response));
+});
 
 router.get('/pizzaorder',function(req,res,next){
   res.render('pizzaorder',{});
@@ -33,6 +37,11 @@ router.post('/reboot',function(req,res,next){
     console.log(`stdout: ${stdout}`);
     console.log(`stderr: ${stderr}`);
   })
+});
+
+router.post('/ddapi',function(req,res,next){
+  url="";
+
 });
 
 router.post('/webhook',function(req,res,next){
