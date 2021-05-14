@@ -89,12 +89,12 @@ router.post('/test',function(req,res,next){
 });
 
 router.post('/multistep',function(req,res,next){
-  patten=req.body.patten;
+  pattern=req.body.pattern;
   var response;
-  if (patten==1){
+  if (pattern==1){
     response={"ResultCode":"0100","ResultMessage":"resultmessages1"}
   }
-  else if (patten==2){
+  else if (pattern==2){
     response={"ResultCode":"0200","ResultMessage":"resultmessages2"}
   }
   else {
