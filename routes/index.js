@@ -17,10 +17,6 @@ router.get('/spa',function(req,res,next){
   response={"id":1,"name":"wangzz"}
   res.send(JSON.stringify(response));
 });
-router.get('/getjson',function(req,res,next){
-  response={"ResultCode":"0900","ResultMessage":"resultmessages"}
-  res.send(JSON.stringify(response));
-});
 
 router.get('/pizzaorder',function(req,res,next){
   res.render('pizzaorder',{});
@@ -90,6 +86,21 @@ router.post('/test',function(req,res,next){
   var dt=d.toLocaleString();
   console.log(dt + "  event_title is " + eventtitle);
   res.send(msg + " and the event title is " + eventtitle);
+});
+
+router.post('/multistep',function(req,res,next){
+  patten=req.body.patten;
+  var response;
+  if (patten==1){
+    response={"ResultCode":"0100","ResultMessage":"resultmessages1"}
+  }
+  else if (patten==2){
+    response={"ResultCode":"0200","ResultMessage":"resultmessages2"}
+  }
+  else {
+    response={"ResultCode":"0300","ResultMessage":"resultmessages3"}
+  }
+  res.send(JSON.stringify(response));
 });
 
 router.post('/bodytest',function(req,res,next){
