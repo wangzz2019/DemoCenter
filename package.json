@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@alicloud/imagesearch-2018-01-20": "^1.0.0",
+    "@datadog/browser-rum": "^2.10.0",
     "cookie-parser": "~1.4.3",
     "dateformat": "^3.0.3",
     "dd-sdk-reactnative": "^1.0.0-beta1",
