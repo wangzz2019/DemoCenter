@@ -14,8 +14,9 @@ router.get('/promise',function(req,res,next){
   res.render('promise',{title:"promise test page"});
 });
 router.get('/spa',function(req,res,next){
-  response={"id":1,"name":"wangzz"}
-  res.send(JSON.stringify(response));
+  // response={"id":1,"name":"wangzz"}
+  // res.send(JSON.stringify(response));
+  res.render("spa");
 });
 
 router.get('/pizzaorder',function(req,res,next){
