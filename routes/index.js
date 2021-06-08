@@ -107,6 +107,7 @@ router.post('/multistep',function(req,res,next){
 router.post('/num1',function(req,res,next){
   var1=req.body.num1;
   res.send(var1);
+  console.log(var1);
 });
 
 router.post('/bodytest',function(req,res,next){
