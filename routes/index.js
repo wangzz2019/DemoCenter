@@ -104,6 +104,11 @@ router.post('/multistep',function(req,res,next){
   res.send(JSON.stringify(response));
 });
 
+router.post('/num1',function(req,res,next){
+  var1=req.body.num1;
+  res.send(var1);
+});
+
 router.post('/bodytest',function(req,res,next){
   var1=req.body.customerOccurDate;
   var2=req.body.customerOccurTime;
