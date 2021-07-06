@@ -13,9 +13,12 @@ var https = require('https');
 var fs = require('fs');
 var path= require('path');
 
-var privateKey=fs.readFileSync(path.join(__dirname,'../certificate/private.pem'),'utf-8');
-var certificate = fs.readFileSync(path.join(__dirname,'../certificate/file.crt'), 'utf-8');
-var credentials = {key:privateKey, cert:certificate};
+
+
+
+// var privateKey=fs.readFileSync(path.join(__dirname,'../certificate/private.pem'),'utf-8');
+// var certificate = fs.readFileSync(path.join(__dirname,'../certificate/file.crt'), 'utf-8');
+// var credentials = {key:privateKey, cert:certificate};
 
 // This line must come before importing any instrumented module.
 //const tracer = require('dd-trace').init();
@@ -32,7 +35,7 @@ var port = normalizePort(process.env.PORT || '3000');
  */
 
 var server = http.createServer(app);
-var httpsServer = https.createServer(credentials,app);
+// var httpsServer = https.createServer(credentials,app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -42,7 +45,7 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-httpsServer.listen('3001');
+// httpsServer.listen('3001');
 
 /**
  * Normalize a port into a number, string, or false.
