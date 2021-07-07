@@ -77,6 +77,7 @@ router.post('/webhook',function(req,res,next){
   returnmsg={"body":eventmsg,"title":eventtitle,"orgid":orgid,"orgname":orgname,"ALERT_TYPE":alert_type,"ALERT_STATUS":alert_status,"LOG_SAMPLE":log_sample};
   // returnmsg={"body":eventmsg,"orgid":orgid,"orgname":orgname,"ALERT_TYPE":alert_type,"ALERT_STATUS":alert_status,"LOG_SAMPLE":log_sample};
   console.log(returnmsg);
+  console.log(JSON.stringify(req.headers));
   res.send(JSON.stringify(returnmsg));
 });
 
