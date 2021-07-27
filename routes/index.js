@@ -72,10 +72,12 @@ router.post('/webhook',function(req,res,next){
   }
   else{
     rows=log_sample.rows;
+    console.log("Printing the sample logs here:");
     for (i=0;i<rows.length;i++){
       console.log(rows[i]);
     }
   }
+  console.log("");
   // console.log(log_sample);
   var d=new Date();
   var dt=d.toLocaleString();
