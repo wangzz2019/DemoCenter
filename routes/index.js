@@ -70,6 +70,12 @@ router.post('/webhook',function(req,res,next){
   if (log_sample == null){
     log_sample="";
   }
+  else{
+    rows=log_sample.rows;
+    for (i=0;i<rows.length;i++){
+      console.log(rows[i]);
+    }
+  }
   // console.log(log_sample);
   var d=new Date();
   var dt=d.toLocaleString();

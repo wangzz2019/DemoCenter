@@ -1,4 +1,6 @@
 node_modules/
 certificate/
 public/javascripts/rum_org.js
+dist/rum.js
+dist/rum.js.map
 
