@@ -36,9 +36,9 @@ router.post('/reboot',function(req,res,next){
   })
 });
 
-router.post('/ddapi',function(req,res,next){
-  url="";
-
+router.get('/localtest',function(req,res,next){
+  testString={ items: [ '06:28:44 UTC', 'centos72' ], message: 'test message3' };
+  console.log(testString.message);
 });
 
 router.post('/webhook',function(req,res,next){
@@ -67,6 +67,7 @@ router.post('/webhook',function(req,res,next){
   alert_type=req.body.alert_type;
   alert_status=req.body.alert_status;
   log_sample=req.body.log_sample;
+
   if (log_sample == null){
     log_sample="";
   }
@@ -74,7 +75,7 @@ router.post('/webhook',function(req,res,next){
     rows=log_sample.rows;
     console.log("Printing the sample logs here:");
     for (i=0;i<rows.length;i++){
-      console.log(JSON.stringify(rows[i]).message);
+      console.log(JSON.parse(rows[i]).message);
     }
   }
   console.log("");
@@ -97,6 +98,8 @@ router.post('/test',function(req,res,next){
   console.log(dt + "  event_title is " + eventtitle);
   res.send(msg + " and the event title is " + eventtitle);
 });
+
+
 
 router.post('/multistep',function(req,res,next){
   pattern=req.body.pattern;
