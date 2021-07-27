@@ -75,7 +75,7 @@ router.post('/webhook',function(req,res,next){
     rows=log_sample.rows;
     console.log("Printing the sample logs here:");
     for (i=0;i<rows.length;i++){
-      console.log(JSON.parse(rows[i]).message);
+      console.log(rows[0].message);
     }
   }
   console.log("");
