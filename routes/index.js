@@ -10,6 +10,10 @@ router.get('/', function(req, res, next) {
   //res.render('pizza42', { title: 'Pizza 42' });
   res.render('index',{title:'Home Page'});
 });
+router.get('/testdiv', function(req, res, next) {
+  //res.render('pizza42', { title: 'Pizza 42' });
+  res.render('testdiv',{title:'testdiv'});
+});
 router.get('/promise',function(req,res,next){
   res.render('promise',{title:"promise test page"});
 });
