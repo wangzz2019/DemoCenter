@@ -24,11 +24,16 @@
     abcdefghijklmnop<br>
     abcdefghijklmnot<br>
   </div>
-  <button id="testbtn" class="btn btn-primary btn-margin container">
+  
+  <button id="testbtn" class="btn btn-primary btn-margin container"; disabled=true; onclick="displayMessage()">
     <font size="4">test button</font>
   </button>
+  <div id="message">
+  </div>
   <script type="text/javascript">
-    testbtn.disabled = true;
+    function displayMessage(){
+      message.innerHTML="button clicked!";
+    }
   </script>
   <script type="text/javascript">
     var addEvent = (function () {
