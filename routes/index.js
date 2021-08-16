@@ -18,6 +18,9 @@ router.get('/video', function (req, res, next) {
   //res.render('pizza42', { title: 'Pizza 42' });
   res.render('video', { title: 'video' });
 });
+router.get('/video2', function (req, res, next) {
+  res.render('video2', { title: 'video2' });
+});
 router.get('/promise', function (req, res, next) {
   res.render('promise', { title: "promise test page" });
 });
