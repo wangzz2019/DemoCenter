@@ -27,4 +27,4 @@ jobs:
           DD_INSIDE_CI: "true"
           DD_HOSTNAME: "none"
     steps:
-      - run: make test
+      - run: echo "🎉 it is just a datadog test triggered by a ${{ github.event_name }} event."
