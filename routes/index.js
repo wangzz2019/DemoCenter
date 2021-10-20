@@ -52,6 +52,18 @@ router.get('/localtest', function (req, res, next) {
   console.log(testString.message);
 });
 
+router.post('/savefile',function(req,res,next){
+  reqbody=req.body;
+  fs.writeFile('reqbody.txt',JSON.stringify(reqbody),err=>{
+    if (err) {
+      console.log(err);
+      return;
+    }
+  });
+}
+
+);
+
 router.post('/webhook', function (req, res, next) {
   msg = "Hi, this is a return page of POST test";
   eventtitle = req.body.title;
@@ -83,9 +95,9 @@ router.post('/webhook', function (req, res, next) {
   console.log("now printing the whole body of the http request")
   console.log("========print start=========")
   console.log(reqbody)
-  fs.writeFile('reqbody.txt',reqbody,err=>{
+  fs.writeFile('reqbody.txt',JSON.stringify(reqbody),err=>{
     if (err) {
-      console.error(err);
+      console.log(err);
       return;
     }
   });
@@ -97,9 +109,9 @@ router.post('/webhook', function (req, res, next) {
   else {
     rows = log_sample.rows;
     //save rows to file rows.txt
-    fs.writeFile('rows.txt',rows,err=>{
+    fs.writeFile('rows.txt',JSON.stringify(rows),err=>{
       if (err) {
-        console.error(err);
+        console.log(err);
         return;
       }
     });
