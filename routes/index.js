@@ -83,6 +83,12 @@ router.post('/webhook', function (req, res, next) {
   console.log("now printing the whole body of the http request")
   console.log("========print start=========")
   console.log(reqbody)
+  fs.writeFile('reqbody.txt',reqbody,err=>{
+    if (err) {
+      console.error(err);
+      return;
+    }
+  });
   console.log("========print end=========")
 
   if (log_sample == null) {
@@ -90,6 +96,13 @@ router.post('/webhook', function (req, res, next) {
   }
   else {
     rows = log_sample.rows;
+    //save rows to file rows.txt
+    fs.writeFile('rows.txt',rows,err=>{
+      if (err) {
+        console.error(err);
+        return;
+      }
+    });
     console.log("Printing the sample logs here:");
     for (i = 0; i < rows.length; i++) {
       console.log(JSON.stringify(rows[i]));
