@@ -79,6 +79,12 @@ router.post('/webhook', function (req, res, next) {
   alert_status = req.body.alert_status;
   log_sample = req.body.log_sample;
 
+  reqbody=req.body;
+  console.log("now printing the whole body of the http request")
+  console.log("========print start=========")
+  console.log(reqbody)
+  console.log("========print end=========")
+
   if (log_sample == null) {
     log_sample = "";
   }
